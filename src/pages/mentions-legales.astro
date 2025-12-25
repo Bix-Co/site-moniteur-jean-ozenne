@@ -1,0 +1,206 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { ArrowLeft, ShieldAlert, BadgeInfo, Scale } from "lucide-astro";
+---
+
+<Layout title="Mentions Légales & CGV | Jean Ozenne">
+    <main class="bg-ski-black text-zinc-300 min-h-screen py-20 px-6 font-sans">
+        <div class="max-w-3xl mx-auto">
+            <header class="mb-16">
+                <a
+                    href="/"
+                    class="text-ski-gold hover:text-white transition-colors flex items-center gap-2 text-sm mb-8 group"
+                >
+                    <ArrowLeft
+                        class="w-4 h-4 group-hover:-translate-x-1 transition-transform"
+                    />
+                    Retour à l'accueil
+                </a>
+                <h1 class="text-4xl md:text-5xl font-serif text-white mb-4">
+                    Cadre Légal & <span class="text-ski-gold">CGV</span>
+                </h1>
+                <p class="text-zinc-500 font-light">
+                    Dernière mise à jour : 25 décembre 2025
+                </p>
+            </header>
+
+            <div class="space-y-12 text-zinc-400 font-light leading-relaxed">
+                <!-- 1. IDENTITÉ -->
+                <section
+                    class="bg-white/5 p-8 rounded-2xl border border-white/10"
+                >
+                    <div class="flex items-center gap-3 mb-6">
+                        <BadgeInfo class="w-6 h-6 text-ski-gold" />
+                        <h2 class="text-white font-serif text-xl">
+                            1. Éditeur & Statut
+                        </h2>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <p>
+                            Le présent site est édité par <strong
+                                >Jean Ozenne</strong
+                            >, exerçant en tant qu'<strong
+                                >Entrepreneur Individuel</strong
+                            >.
+                        </p>
+                        <ul class="space-y-2 border-l border-ski-gold/30 pl-4">
+                            <li>
+                                <strong>Statut :</strong> Moniteur de Ski Stagiaire
+                            </li>
+                            <li>
+                                <strong>Siège social :</strong> [Votre Adresse à Tignes/Val]
+                            </li>
+                            <li><strong>SIRET :</strong> [Votre SIRET]</li>
+                            <li>
+                                <strong>Assurance RC Pro :</strong> [Nom Compagnie
+                                + N° Contrat]
+                            </li>
+                            <li>
+                                <strong>Directeur de la publication :</strong> Jean
+                                Ozenne
+                            </li>
+                        </ul>
+                        <p class="text-xs italic text-zinc-500 mt-4">
+                            Note : En tant que moniteur stagiaire, Jean Ozenne
+                            est habilité à dispenser l'enseignement du ski alpin
+                            dans le cadre réglementaire de sa formation vers le
+                            Diplôme d'État.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 2. EXCLUSION HORS-PISTE -->
+                <section
+                    class="bg-ski-gold/5 p-8 rounded-2xl border border-ski-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.05)]"
+                >
+                    <div class="flex items-center gap-3 mb-6">
+                        <ShieldAlert class="w-6 h-6 text-ski-gold" />
+                        <h2 class="text-white font-serif text-xl">
+                            2. Périmètre d'Intervention
+                        </h2>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-white font-medium">
+                            ⚠️ Restriction de Sécurité Importante :
+                        </p>
+                        <p>
+                            Conformément à son statut actuel et pour garantir
+                            une sécurité optimale, Jean Ozenne propose
+                            exclusivement des prestations sur <strong
+                                >pistes balisées et ouvertes</strong
+                            >.
+                        </p>
+                        <p
+                            class="bg-black/40 p-4 rounded-lg border-l-4 border-ski-gold text-sm italic"
+                        >
+                            "Aucune sortie hors-piste, ski de randonnée ou
+                            itinéraire sauvage n'est proposé dans le cadre de
+                            ces prestations."
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 3. CGV -->
+                <section class="space-y-8">
+                    <div class="flex items-center gap-3 mb-2">
+                        <Scale class="w-6 h-6 text-ski-gold" />
+                        <h2 class="text-white font-serif text-2xl">
+                            3. Conditions Générales de Vente
+                        </h2>
+                    </div>
+
+                    <div class="grid gap-6">
+                        <div class="space-y-2">
+                            <h3 class="text-white font-medium">
+                                3.1 Réservations & Planning
+                            </h3>
+                            <p class="text-sm">
+                                Les réservations deviennent définitives après
+                                confirmation par WhatsApp ou téléphone. En
+                                raison de la forte demande, le blocage d'une
+                                date peut nécessiter le versement d'un acompte
+                                (modalités précisées lors du contact direct).
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="text-white font-medium">
+                                3.2 Annulations
+                            </h3>
+                            <ul class="text-sm list-disc pl-5 space-y-1">
+                                <li>
+                                    <strong>Plus de 7 jours avant :</strong> Annulation
+                                    sans frais.
+                                </li>
+                                <li>
+                                    <strong>Entre 7 jours et 48h :</strong> 50% du
+                                    montant de la prestation est dû.
+                                </li>
+                                <li>
+                                    <strong>Moins de 48h :</strong> La prestation
+                                    est due dans son intégralité.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="text-white font-medium">
+                                3.3 Météo & Risques
+                            </h3>
+                            <p class="text-sm">
+                                Le mauvais temps, le froid ou le manque de
+                                visibilité ne sont pas des causes d'annulation
+                                automatique. Seul le moniteur est juge de la
+                                faisabilité de la séance. En cas de fermeture
+                                totale du domaine skiable (décision préfectorale
+                                ou de la régie des pistes), la séance sera
+                                reportée ou remboursée.
+                            </p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="text-white font-medium">
+                                3.4 Assurances Client
+                            </h3>
+                            <p class="text-sm">
+                                Le ski est une activité à risque. Chaque
+                                participant doit être couvert par une
+                                <strong>assurance responsabilité civile</strong> et
+                                une assurance individuelle accident (type Carré Neige
+                                recommandé). Jean Ozenne ne saurait être tenu responsable
+                                des dommages subis par le client en dehors des fautes
+                                caractérisées relevant de sa RC Pro.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. HEBERGEMENT -->
+                <section
+                    class="pt-8 border-t border-white/10 text-xs text-zinc-600"
+                >
+                    <p>
+                        <strong>Hébergement :</strong> Vercel Inc. - 440 N Barranca
+                        Ave #4133, Covina, CA 91723, USA.
+                    </p>
+                    <p class="mt-2 text-zinc-500">
+                        Ce site ne collecte pas de cookies de tracking. Les
+                        données partagées via WhatsApp le sont dans le seul but
+                        de la gestion de votre réservation.
+                    </p>
+                </section>
+            </div>
+
+            <footer
+                class="mt-20 pt-10 border-t border-white/5 flex justify-center"
+            >
+                <a
+                    href="/"
+                    class="bg-white/5 hover:bg-white/10 text-white px-8 py-3 rounded-full transition-all border border-white/10 text-sm"
+                >
+                    Revenir à l'expérience Jean Ozenne
+                </a>
+            </footer>
+        </div>
+    </main>
+</Layout>

@@ -1,16 +1,579 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import {
+    Phone,
+    Calendar,
+    Menu,
+    Mountain,
+    Check,
+    MapPin,
+    ShieldCheck,
+    Star,
+    Instagram,
+    ArrowRight,
+    PlayCircle,
+} from "lucide-astro";
 
+// --- CONFIGURATION & DATA ---
+const MONITEUR = {
+    nom: "Jean Ozenne",
+    titre: "Moniteur Stagiaire & Diplômé LEA",
+    tel: "33687039460",
+    instagram: "https://www.instagram.com/_.jino._/",
+    // Lien vers un PDF ou une page dédiée pour les CGV (à créer plus tard)
+    cgv: "/mentions-legales",
+    calendar: "https://calendar.google.com/calendar",
+};
+
+// Messages WhatsApp
+const WA_MESSAGES = {
+    hero: `Bonjour Jean, je souhaite réserver un séjour sur mesure...`,
+    coaching: `Bonjour Jean, je suis intéressé par ton expertise Carving / Technique...`,
+    day: `Bonjour Jean, je souhaite privatiser une Journée (Logistique & Ski)...`,
+    safari: `Bonjour Jean, dis-m'en plus sur le Safari Alpin...`,
+    contact: `Bonjour Jean, j'ai une question spécifique (FR/EN/ES)...`,
+};
+
+const getWaLink = (msg: string) =>
+    `https://wa.me/${MONITEUR.tel}?text=${encodeURIComponent(msg)}`;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={`${MONITEUR.nom} | Moniteur Ski Tignes Val d'Isère`}>
+    <main
+        class="w-full overflow-x-hidden bg-ski-black text-ski-white font-sans"
+    >
+        <section
+            class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="/images/jean-hero.jpg"
+                    alt="Jean Ozenne Carving Tignes"
+                    class="w-full h-full object-cover object-center md:object-[center_30%]"
+                    loading="eager"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-ski-black/60 via-transparent to-ski-black/95"
+                >
+                </div>
+            </div>
+
+            <header
+                class="absolute top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-40 px-6 py-4 flex justify-between items-center rounded-full border border-white/10 bg-ski-black/60 backdrop-blur-md shadow-lg shadow-black/40"
+            >
+                <div class="flex items-center gap-2 text-white">
+                    <Mountain class="w-6 h-6 text-ski-gold" />
+                    <span
+                        class="font-serif text-lg font-bold tracking-wide uppercase"
+                    >
+                        JEAN<span class="text-ski-gold">.</span>OZENNE
+                    </span>
+                </div>
+
+                <nav
+                    class="hidden md:flex gap-8 text-sm font-medium text-zinc-200"
+                >
+                    <a
+                        href="#experience"
+                        class="hover:text-ski-gold transition-colors"
+                        >L'Expertise</a
+                    >
+                    <a
+                        href="#offres"
+                        class="hover:text-ski-gold transition-colors">Offres</a
+                    >
+                    <a
+                        href="#moniteur"
+                        class="hover:text-ski-gold transition-colors"
+                        >Le Moniteur</a
+                    >
+                </nav>
+
+                <a
+                    href={getWaLink(WA_MESSAGES.contact)}
+                    class="hidden md:flex items-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2 rounded-full text-sm hover:bg-ski-gold/90 hover:border-ski-gold hover:text-ski-black transition-all backdrop-blur-sm"
+                >
+                    <Phone class="w-4 h-4" />
+                    <span>Contact</span>
+                </a>
+                <button class="md:hidden text-white"
+                    ><Menu class="w-6 h-6" /></button
+                >
+            </header>
+
+            <div class="relative z-10 container mx-auto px-6 text-center mt-10">
+                <div
+                    class="inline-flex items-center gap-3 border border-ski-gold/50 bg-ski-black/60 backdrop-blur-xl px-6 py-2.5 rounded-full mb-8 mx-auto shadow-[0_0_20px_rgba(212,175,55,0.2)] animate-pulse-slow"
+                >
+                    <span
+                        class="text-sm font-bold text-ski-gold tracking-[0.2em] uppercase"
+                        >Expertise Trilingue • FR • EN • ES</span
+                    >
+                </div>
+
+                <h1
+                    class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-white mb-6 drop-shadow-2xl font-serif"
+                >
+                    L'Excellence Alpine<br />
+                    <span class="italic font-light text-ski-gold block mt-2"
+                        >Brute & Raffinée.</span
+                    >
+                </h1>
+
+                <p
+                    class="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed drop-shadow-md"
+                >
+                    Expertise technique ENSA & Maîtrise Trilingue. <br
+                        class="hidden md:block"
+                    />
+                    Une pédagogie de pointe sans barrière de langue pour une progression
+                    d'exception et une logistique invisible.
+                </p>
+
+                <div
+                    class="flex flex-col md:flex-row gap-4 justify-center items-center w-full"
+                >
+                    <a
+                        href={getWaLink(WA_MESSAGES.hero)}
+                        class="w-[85%] max-w-xs md:w-auto bg-ski-gold text-ski-black px-6 py-3 rounded-full font-medium text-base hover:bg-white transition-all flex items-center justify-center gap-2 shadow-lg shadow-ski-gold/20"
+                    >
+                        <Phone class="w-4 h-4" />
+                        Réserver mon séjour
+                    </a>
+
+                    <a
+                        href={MONITEUR.calendar}
+                        target="_blank"
+                        class="w-[85%] max-w-xs md:w-auto border border-white/30 bg-black/20 text-white px-6 py-3 rounded-full font-medium text-base hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm flex items-center justify-center gap-2"
+                    >
+                        <Calendar class="w-4 h-4" />
+                        Disponibilités
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-ski-gold/50 hidden md:block"
+            >
+                <ArrowRight class="w-6 h-6 rotate-90" />
+            </div>
+        </section>
+
+        <section
+            id="experience"
+            class="bg-ski-black py-24 px-6 relative overflow-hidden"
+        >
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-glacial-blue/5 rounded-full blur-[150px] pointer-events-none"
+            >
+            </div>
+
+            <div class="container mx-auto max-w-6xl relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div
+                        class="group p-8 rounded-3xl bg-ski-dark/40 backdrop-blur-md border border-white/5 hover:border-ski-gold/30 transition-all duration-500 shadow-xl flex flex-col items-center"
+                    >
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-ski-black/50 flex items-center justify-center mb-6 text-ski-gold group-hover:scale-110 transition-transform"
+                        >
+                            <ShieldCheck class="w-8 h-8" />
+                        </div>
+                        <h3 class="text-xl text-white font-serif mb-3">
+                            Maîtrise Trilingue
+                        </h3>
+                        <p
+                            class="text-zinc-400 font-light leading-relaxed text-sm"
+                        >
+                            Anglais et Espagnol courants. Je facilite
+                            l'immersion totale de vos invités internationaux.
+                            Une communication limpide pour une sécurité et un
+                            plaisir sans compromis.
+                        </p>
+                    </div>
+
+                    <div
+                        class="group p-8 rounded-3xl bg-ski-dark/40 backdrop-blur-md border border-white/5 hover:border-ski-gold/30 transition-all duration-500 shadow-xl flex flex-col items-center"
+                    >
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-ski-black/50 flex items-center justify-center mb-6 text-ski-gold group-hover:scale-110 transition-transform"
+                        >
+                            <Star class="w-8 h-8" />
+                        </div>
+                        <h3 class="text-xl text-white font-serif mb-3">
+                            Technique Moderne
+                        </h3>
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            Issu du cursus ENSA actuel. Je partage les dernières
+                            techniques de Carving et "Hip Drag" pour une glisse
+                            performante.
+                        </p>
+                    </div>
+
+                    <div
+                        class="group p-8 rounded-3xl bg-ski-dark/40 backdrop-blur-md border border-white/5 hover:border-ski-gold/30 transition-all duration-500 shadow-xl flex flex-col items-center"
+                    >
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-ski-black/50 flex items-center justify-center mb-6 text-ski-gold group-hover:scale-110 transition-transform"
+                        >
+                            <MapPin class="w-8 h-8" />
+                        </div>
+                        <h3 class="text-xl text-white font-serif mb-3">
+                            Logistique "Sans Accrocs"
+                        </h3>
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            Je gère l'itinéraire et les réservations avec une
+                            rigueur militaire, dissimulée sous un sourire
+                            constant. Zéro stress pour vous.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="offres"
+            class="bg-ski-dark py-24 px-6 relative overflow-hidden"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="/images/jean-sommet.jpg"
+                    alt="Panorama Sommet Tignes"
+                    class="w-full h-full object-cover opacity-30 grayscale-[20%]"
+                />
+                <div class="absolute inset-0 bg-ski-black/40"></div>
+            </div>
+
+            <div class="container mx-auto max-w-6xl relative z-10">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-3xl md:text-5xl text-white font-serif mb-6 drop-shadow-lg"
+                    >
+                        Formats d'Excellence
+                    </h2>
+                    <div class="w-24 h-1 bg-ski-gold/80 mx-auto shadow-lg">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-ski-black/80 backdrop-blur-xl border border-white/5 p-8 rounded-3xl hover:border-ski-gold/30 hover:scale-[1.02] transition-all duration-300 flex flex-col group"
+                    >
+                        <h3
+                            class="text-2xl text-white font-serif mb-2 group-hover:text-ski-gold transition-colors"
+                        >
+                            Technical Masterclass
+                        </h3>
+                        <p
+                            class="text-ski-gold text-sm mb-6 uppercase tracking-wider font-medium"
+                        >
+                            Carving & Bio-Mécanique
+                        </p>
+                        <div class="text-zinc-300 mb-8 flex-grow">
+                            <p class="font-light mb-4">
+                                Redécouvrez la sensation de coupe. Une pédagogie
+                                active pour briser vos paliers techniques.
+                            </p>
+                            <ul class="text-sm space-y-2 text-zinc-400">
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Analyse
+                                    vidéo HD personnalisée
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Correction
+                                    posturale dynamique
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Bilan
+                                    technique digital envoyé par mail
+                                </li>
+                            </ul>
+                        </div>
+                        <a
+                            href={getWaLink(WA_MESSAGES.coaching)}
+                            class="mt-auto block w-full py-3 text-center border border-white/30 text-white rounded-xl hover:bg-ski-gold hover:border-ski-gold hover:text-ski-black transition-colors font-medium"
+                            >Réserver ma session</a
+                        >
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-b from-ski-gold/20 to-ski-black/95 backdrop-blur-xl border border-ski-gold/40 p-8 rounded-3xl transform md:-translate-y-4 shadow-2xl shadow-ski-gold/10 hover:scale-[1.02] transition-all duration-300 flex flex-col relative"
+                    >
+                        <div
+                            class="absolute top-0 right-0 bg-ski-gold text-ski-black text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-2xl tracking-wider"
+                        >
+                            BEST SELLER
+                        </div>
+                        <h3 class="text-2xl text-white font-serif mb-2">
+                            Engagement Journée
+                        </h3>
+                        <p
+                            class="text-ski-gold text-sm mb-6 uppercase tracking-wider font-medium"
+                        >
+                            Sérénité & Organisation VIP
+                        </p>
+                        <div class="text-zinc-300 mb-8 flex-grow">
+                            <p class="font-light mb-4">
+                                Je m'occupe de tout. Itinéraire anti-foule,
+                                restaurants, et gestion fluide du groupe.
+                            </p>
+                            <ul class="text-sm space-y-2 text-zinc-300/70">
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Prise
+                                    en charge à votre hôtel/chalet
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Réservations
+                                    de tables privilégiées
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Ski-Safari
+                                    personnalisé Tignes-Val
+                                </li>
+                            </ul>
+                        </div>
+                        <a
+                            href={getWaLink(WA_MESSAGES.day)}
+                            class="mt-auto block w-full py-3 text-center bg-ski-gold text-ski-black rounded-xl hover:bg-white transition-colors font-medium shadow-lg font-bold"
+                            >Bloquer ma date</a
+                        >
+                    </div>
+
+                    <div
+                        class="bg-ski-black/80 backdrop-blur-xl border border-white/5 p-8 rounded-3xl hover:border-ski-gold/30 hover:scale-[1.02] transition-all duration-300 flex flex-col group"
+                    >
+                        <h3
+                            class="text-2xl text-white font-serif mb-2 group-hover:text-ski-gold transition-colors"
+                        >
+                            Safari & First Tracks
+                        </h3>
+                        <p
+                            class="text-ski-gold text-sm mb-6 uppercase tracking-wider font-medium"
+                        >
+                            L'Aventure Alpine
+                        </p>
+                        <div class="text-zinc-300 mb-8 flex-grow">
+                            <p class="font-light mb-4">
+                                Soyez les premiers sur la piste vierge à
+                                l'ouverture, suivi d'un grand tour du domaine.
+                            </p>
+                            <ul class="text-sm space-y-2 text-zinc-400">
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Accès
+                                    matinal privilégié
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Découverte
+                                    de spots secrets
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <Check class="w-3 h-3 text-ski-gold" /> Pause
+                                    café d'altitude panoramique
+                                </li>
+                            </ul>
+                        </div>
+                        <a
+                            href={getWaLink(WA_MESSAGES.safari)}
+                            class="mt-auto block w-full py-3 text-center border border-white/30 text-white rounded-xl hover:bg-ski-gold hover:border-ski-gold hover:text-ski-black transition-colors font-medium"
+                            >Organiser mon aventure</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="py-24 bg-ski-black relative overflow-hidden border-t border-white/5"
+        >
+            <div class="container mx-auto max-w-6xl px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl text-white font-serif mb-4">
+                        <span class="text-ski-gold">In</span> Motion.
+                    </h2>
+                    <p class="text-zinc-400 max-w-2xl mx-auto font-light">
+                        La technique en action.
+                    </p>
+                </div>
+
+                <div
+                    class="max-w-sm mx-auto aspect-[9/16] bg-ski-dark rounded-3xl overflow-hidden border border-white/10 relative group cursor-pointer shadow-2xl"
+                >
+                    <img
+                        src="/images/jean-action-hip.jpg"
+                        alt="Video cover"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <a
+                        href={MONITEUR.instagram}
+                        target="_blank"
+                        class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors"
+                    >
+                        <PlayCircle
+                            class="w-20 h-20 text-white/80 group-hover:text-ski-gold transition-colors backdrop-blur-sm rounded-full"
+                        />
+                    </a>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent"
+                    >
+                        <p
+                            class="text-white font-serif flex items-center gap-2"
+                        >
+                            <Instagram class="w-4 h-4" /> Voir sur Instagram
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="moniteur"
+            class="bg-ski-dark py-24 px-6 relative overflow-hidden"
+        >
+            <div class="container mx-auto max-w-5xl relative z-10">
+                <div
+                    class="flex flex-col md:flex-row items-center gap-12 md:gap-20"
+                >
+                    <div class="w-full md:w-1/2 relative group">
+                        <div
+                            class="absolute inset-0 border-2 border-ski-gold/30 rounded-2xl transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform"
+                        >
+                        </div>
+                        <div
+                            class="relative rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl"
+                        >
+                            <img
+                                src="/images/jean-portrait.jpg"
+                                alt="Jean Ozenne Portrait Ski"
+                                class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ski-black/80 via-transparent to-transparent"
+                            >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2">
+                        <h2
+                            class="text-3xl md:text-5xl text-white font-serif mb-4"
+                        >
+                            Jean Ozenne
+                        </h2>
+                        <div class="h-1 w-20 bg-ski-gold mb-6"></div>
+
+                        <div
+                            class="space-y-6 text-zinc-300 font-light leading-relaxed text-justify"
+                        >
+                            <p class="text-lg">
+                                "Le ski est un équilibre entre une <strong
+                                    >technique brute</strong
+                                > et une fluidité mentale."
+                            </p>
+                            <p>
+                                Fort d'un double cursus en Langues Étrangères
+                                (LEA) et en préparation physique, j'aborde la
+                                montagne comme un terrain d'excellence globale.
+                                Passionné par la bio-mécanique et la précision
+                                du geste, je transmets les standards de l'ENSA
+                                avec une <strong>rigueur absolue</strong> dissimulée
+                                sous une approche fluide et humaine.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 mt-10">
+                            <div
+                                class="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur text-sm text-zinc-300 flex items-center gap-2"
+                            >
+                                <Check class="w-4 h-4 text-ski-gold" /> Trilingue
+                                LEA
+                            </div>
+                            <div
+                                class="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur text-sm text-zinc-300 flex items-center gap-2"
+                            >
+                                <Check class="w-4 h-4 text-ski-gold" /> Stagiaire
+                                ENSA
+                            </div>
+                            <div
+                                class="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur text-sm text-zinc-300 flex items-center gap-2"
+                            >
+                                <Check class="w-4 h-4 text-ski-gold" /> Expert Carving
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer
+            id="infos"
+            class="bg-ski-black pt-20 pb-10 px-6 border-t border-white/5 relative overflow-hidden"
+        >
+            <div
+                class="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-glacial-blue/5 to-transparent pointer-events-none"
+            >
+            </div>
+            <div class="container mx-auto max-w-6xl relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    <div>
+                        <h4
+                            class="text-white font-serif text-lg mb-4 flex items-center gap-2"
+                        >
+                            <MapPin class="w-4 h-4 text-ski-gold" /> Zone
+                        </h4>
+                        <p class="text-zinc-500 font-light">
+                            Tignes & Val d'Isère<br />(Espace Killy)
+                        </p>
+                    </div>
+                    <div>
+                        <h4
+                            class="text-white font-serif text-lg mb-4 flex items-center gap-2"
+                        >
+                            <Instagram class="w-4 h-4 text-ski-gold" /> Social
+                        </h4>
+                        <p class="text-zinc-500 font-light">
+                            <a
+                                href={MONITEUR.instagram}
+                                class="hover:text-white transition-colors"
+                                >Suivez l'aventure</a
+                            >
+                        </p>
+                    </div>
+                    <div>
+                        <h4
+                            class="text-white font-serif text-lg mb-4 flex items-center gap-2"
+                        >
+                            <Phone class="w-4 h-4 text-ski-gold" /> Contact
+                        </h4>
+                        <a
+                            href={getWaLink(WA_MESSAGES.contact)}
+                            class="text-zinc-400 hover:text-ski-gold transition-colors font-light"
+                            >WhatsApp Direct</a
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500"
+                >
+                    <div class="flex flex-col md:flex-row gap-4 items-center">
+                        <span>© {new Date().getFullYear()} Jean Ozenne</span>
+                        <a
+                            href={MONITEUR.cgv}
+                            class="hover:text-ski-white transition-colors"
+                            >Mentions Légales & CGV</a
+                        >
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <span>Site réalisé par</span>
+                        <a
+                            href="https://bixent.fr"
+                            target="_blank"
+                            class="text-ski-gold hover:text-white transition-colors font-medium"
+                            >Bixent & Co</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</Layout>

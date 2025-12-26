@@ -43,7 +43,7 @@ const getWaLink = (msg: string) =>
         class="w-full overflow-x-hidden bg-ski-black text-ski-white font-sans"
     >
         <section
-            class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden"
+            class="relative min-h-screen w-full flex flex-col justify-start md:justify-center items-center overflow-hidden"
         >
             <div class="absolute inset-0 z-0">
                 <img
@@ -101,13 +101,35 @@ const getWaLink = (msg: string) =>
                 >
             </header>
 
-            <div class="relative z-10 container mx-auto px-6 text-center mt-10">
+            <div
+                class="relative z-10 container mx-auto px-6 text-center pt-32 md:pt-0"
+            >
                 <div
-                    class="inline-flex items-center gap-3 border border-ski-gold/50 bg-ski-black/60 backdrop-blur-xl px-6 py-2.5 rounded-full mb-8 mx-auto shadow-[0_0_20px_rgba(212,175,55,0.2)] animate-pulse-slow"
+                    class="inline-flex items-center gap-3 border border-ski-gold/50 bg-ski-black/60 backdrop-blur-xl px-6 py-2.5 rounded-full mb-8 mx-auto shadow-[0_0_20px_rgba(212,175,55,0.2)] animate-pulse-slow mt-4 md:mt-0"
                 >
+                    <div class="flex gap-2 mr-1">
+                        <img
+                            src="https://flagcdn.com/w40/fr.png"
+                            width="20"
+                            alt="FR"
+                            class="rounded-sm"
+                        />
+                        <img
+                            src="https://flagcdn.com/w40/gb.png"
+                            width="20"
+                            alt="EN"
+                            class="rounded-sm"
+                        />
+                        <img
+                            src="https://flagcdn.com/w40/es.png"
+                            width="20"
+                            alt="ES"
+                            class="rounded-sm"
+                        />
+                    </div>
                     <span
                         class="text-sm font-bold text-ski-gold tracking-[0.2em] uppercase"
-                        >Expertise Trilingue • FR • EN • ES</span
+                        >Expertise Trilingue</span
                     >
                 </div>
 
@@ -178,8 +200,30 @@ const getWaLink = (msg: string) =>
                         >
                             <ShieldCheck class="w-8 h-8" />
                         </div>
-                        <h3 class="text-xl text-white font-serif mb-3">
+                        <h3
+                            class="text-xl text-white font-serif mb-3 flex items-center gap-3 justify-center"
+                        >
                             Maîtrise Trilingue
+                            <span class="flex gap-1">
+                                <img
+                                    src="https://flagcdn.com/w40/fr.png"
+                                    width="18"
+                                    alt="FR"
+                                    class="rounded-sm"
+                                />
+                                <img
+                                    src="https://flagcdn.com/w40/gb.png"
+                                    width="18"
+                                    alt="EN"
+                                    class="rounded-sm"
+                                />
+                                <img
+                                    src="https://flagcdn.com/w40/es.png"
+                                    width="18"
+                                    alt="ES"
+                                    class="rounded-sm"
+                                />
+                            </span>
                         </h3>
                         <p
                             class="text-zinc-400 font-light leading-relaxed text-sm"
